@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>واجب أسماء الإشارة القريبة</title>
+<style>
+:root{--bg:#FFF6E5;--card:#fff;--ink:#2B2A4C;--acc:#14B8A0;--soft:#F1EBFF;--green:#2ECC71;--red:#FF6B6B;--purple:#7C5CFF;--pink:#FF6F91;--page:#FFFDF6;--pageb:#F2D98A}
+@media (prefers-color-scheme:dark){:root{--bg:#1C1A3A;--card:#2A2757;--ink:#F5F3FF;--soft:#3A3670;--page:#2F2B60;--pageb:#6b5f2a}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%}
+body{font-family:"Noto Naskh Arabic","Amiri","Traditional Arabic",Tahoma,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);padding:max(10px,env(safe-area-inset-top)) 12px calc(40px + env(safe-area-inset-bottom))}
+.app{max-width:820px;margin:0 auto}
+header{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;border-radius:24px;padding:12px;text-align:center;box-shadow:0 6px 0 rgba(0,0,0,.12)}
+header .m{font-size:clamp(34px,6vw,48px);line-height:1.1}header h1{margin:2px 0 0;font-size:clamp(25px,4.4vw,38px)}header p{margin:0;font-size:clamp(16px,2.4vw,21px);line-height:1.8}
+body[data-t="read"]{--acc:#D9730D}body[data-t="play"]{--acc:#7C5CFF}
+.steps{position:sticky;top:0;z-index:6;display:flex;gap:8px;background:var(--bg);padding:10px 0 8px;margin-top:6px}
+.steps button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;position:relative}
+.steps .ic{font-size:clamp(26px,4.6vw,36px);line-height:1.2}.steps .lb{font-size:clamp(16px,2.5vw,21px);line-height:1.4}
+.steps button i{position:absolute;top:2px;left:6px;font-style:normal;font-size:18px}
+.zone{display:flex;align-items:center;gap:12px;background:var(--acc);color:#fff;border-radius:22px;padding:10px 16px;margin-top:12px;box-shadow:0 5px 0 rgba(0,0,0,.15);text-align:right}
+.zone .z1{font-size:clamp(38px,7vw,56px);line-height:1.1}.zone h2{margin:0;color:#fff;font-size:clamp(23px,3.8vw,34px)}.zone p{margin:0;font-size:clamp(16px,2.4vw,22px);color:#fff;line-height:1.7}
+.stat{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.medals{display:flex;justify-content:center;gap:12px;font-size:clamp(30px,5vw,42px);margin:6px 0}
+.medals span{filter:grayscale(1);opacity:.3;transition:.3s}.medals span.on{filter:none;opacity:1;transform:scale(1.15)}
+.ribbon{display:inline-block;background:var(--acc);color:#fff;border-radius:14px;padding:2px 16px;font-size:clamp(17px,2.4vw,22px);font-weight:700;margin-bottom:4px}
+.track{display:flex;gap:2px;margin:6px 0 10px;direction:rtl}
+.track span{flex:1;text-align:center;font-size:clamp(14px,3.4vw,26px);line-height:1.4;color:#b7b2c8}
+.track .me{animation:hop .8s ease-in-out infinite;font-size:1.7em;line-height:1.1}
+@keyframes hop{50%{transform:translateY(-8px)}}
+.backq{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:15;border:0;border-radius:24px;background:#7C5CFF;color:#fff;font:inherit;font-size:clamp(19px,2.8vw,25px);font-weight:700;padding:12px 22px;box-shadow:0 6px 0 rgba(0,0,0,.25);cursor:pointer}
+.sk{color:#E0561B;font-weight:700}
+.steps button{flex:1;font:inherit;font-size:clamp(16px,2.4vw,21px);font-weight:700;border:0;border-radius:16px;padding:8px 2px;min-height:52px;background:var(--card);color:var(--ink);cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.1);line-height:1.4}
+.steps b{display:inline-block;width:24px;height:24px;line-height:24px;border-radius:50%;background:var(--soft);margin-left:4px}
+.steps button.on{background:var(--acc);color:#fff}.steps button.on b{background:#fff;color:var(--acc)}
+.card{background:var(--card);border-radius:24px;padding:clamp(14px,2.6vw,24px);margin-top:14px;box-shadow:0 6px 0 rgba(0,0,0,.07)}
+h2{font-size:clamp(23px,3.5vw,32px);margin:0 0 8px;line-height:1.6}
+p{font-size:clamp(19px,2.7vw,25px);line-height:1.95;margin:6px 0}
+.hl{background:#FFE08A;color:#4a3600;border-radius:10px;padding:0 8px;font-weight:800}
+.go{display:block;width:100%;border:0;border-radius:22px;padding:16px;font:inherit;font-size:clamp(21px,3vw,27px);font-weight:800;color:#fff;background:linear-gradient(135deg,#FF8A2B,#FF6F91);box-shadow:0 7px 0 rgba(0,0,0,.2);margin-top:14px;cursor:pointer;text-align:center}
+.go:active,.btn:active{transform:translateY(4px)}
+.btn{display:block;width:100%;border:0;border-radius:20px;padding:14px;font:inherit;font-size:clamp(20px,2.9vw,26px);font-weight:800;color:#fff;background:var(--acc);box-shadow:0 6px 0 rgba(0,0,0,.2);margin-top:12px;cursor:pointer}
+.chip{display:inline-block;background:var(--soft);border-radius:14px;padding:6px 12px;font-weight:700;font-size:clamp(17px,2.4vw,21px)}
+.fc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.fb2{font:inherit;color:var(--ink);background:var(--soft);border:4px dashed var(--acc);border-radius:20px;padding:12px 6px;min-height:140px;cursor:pointer;font-size:clamp(18px,2.6vw,23px);font-weight:700;line-height:1.7}
+.fb2 .e{font-size:clamp(38px,6vw,52px);display:block}.fb2 .w{font-size:clamp(30px,5vw,42px);display:block;color:var(--acc);line-height:1.7}.fb2 .s{font-size:clamp(19px,2.6vw,24px);font-weight:600;display:block;line-height:1.8}
+.fb2.seen{background:var(--card);border-style:solid}
+.tip{background:rgba(20,184,160,.14);border-radius:16px;padding:12px;font-size:clamp(18px,2.5vw,23px);line-height:1.95;margin-top:10px}
+
+/* صفحة القطعة */
+.page{background:var(--page);border:3px solid var(--pageb);border-radius:24px;padding:12px 10px;margin-top:10px}
+.ttl{text-align:center;font-size:clamp(25px,4vw,36px);font-weight:700;margin:0 0 6px;color:var(--acc)}
+.orn{text-align:center;font-size:20px;letter-spacing:6px;margin-bottom:8px;opacity:.8}
+.pg{font-size:clamp(26px,5vw,40px);line-height:2.15;margin:0 0 6px;text-align:right}
+.wd{display:inline-block;position:relative;margin:0;padding:0 3px;border:2px solid transparent;border-radius:14px;cursor:pointer;line-height:1.75}
+.wd.rd{background:rgba(240,160,40,.2)}
+.pg span span,.pg .wd>span{border-radius:10px}
+.story.sh .s{background:#CFE3FF;color:#103a75;padding:0 3px;border-radius:10px}
+.story.tn .t{background:#FFD9A8;color:#6a3600;padding:0 3px;border-radius:10px}
+.story.ds .d{background:#B6F2E5;color:#075446;padding:0 3px;border-radius:10px}
+@media (prefers-color-scheme:dark){.story.sh .s{background:#27508f;color:#fff}.story.tn .t{background:#9a5a12;color:#fff}.story.ds .d{background:#0d7a68;color:#fff}}
+.ayah{background:linear-gradient(135deg,#FFF8DC,#FFEFB5);color:#3b2b00;border:4px double #C9A227;border-radius:18px;padding:8px 6px;margin:4px 0 8px;text-align:center}
+.ayah .ref{font-size:clamp(16px,2.3vw,20px);font-weight:700;color:#7a5c00;margin-bottom:0}
+.ayah .ar{font-family:"KFGQPC Uthmanic Script HAFS","KFGQPC HAFS Uthmanic Script","Amiri Quran","Scheherazade New","Noto Naskh Arabic","Traditional Arabic",serif;font-size:clamp(28px,5.4vw,44px);line-height:2.2}
+.ayah .wd.rd{border-color:#C9A227;background:rgba(201,162,39,.2)}
+.ayah .ln{display:block}
+@media (prefers-color-scheme:dark){.ayah{background:#3d3410;color:#FFEFB0}.ayah .ref{color:#ffd866}}
+.tog{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px}
+.tg{font:inherit;font-size:clamp(16px,2.4vw,20px);font-weight:700;border:3px solid;border-radius:14px;padding:8px 12px;min-height:46px;background:transparent;color:var(--ink);cursor:pointer}
+.tg.on{color:#fff}
+#t-sh{border-color:#3D8BFD}#t-sh.on{background:#3D8BFD}#t-tn{border-color:#FF9F43}#t-tn.on{background:#FF9F43}#t-ds{border-color:#14B8A0}#t-ds.on{background:#14B8A0}
+.bar{height:16px;background:var(--soft);border-radius:10px;overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#FF9F43,var(--green));transition:width .3s}
+.say{border:0;border-radius:14px;background:var(--purple);color:#fff;font:inherit;font-size:clamp(17px,2.4vw,21px);font-weight:700;padding:10px 14px;min-height:46px;margin:4px 4px 0 0;cursor:pointer}
+.say.o{background:#C9A227}
+.toast{position:fixed;left:50%;top:76px;transform:translateX(-50%);max-width:92vw;background:var(--purple);color:#fff;border-radius:18px;padding:12px 16px;font-size:clamp(19px,2.6vw,24px);line-height:1.7;text-align:center;opacity:0;pointer-events:none;transition:opacity .25s;z-index:20}
+.toast.show{opacity:1}
+/* التدريب */
+.top{display:flex;justify-content:space-between;font-weight:700;font-size:clamp(18px,2.5vw,23px);margin-bottom:8px}
+.em{font-size:clamp(62px,10vw,96px);text-align:center;line-height:1.2}
+.q{font-size:clamp(25px,3.8vw,34px);font-weight:700;line-height:1.9;margin:6px 0 12px;text-align:center}
+.opt{display:block;width:100%;font:inherit;font-size:clamp(24px,3.6vw,32px);font-weight:700;min-height:60px;color:var(--ink);background:var(--soft);border:4px solid transparent;border-radius:18px;padding:12px;margin-bottom:10px;cursor:pointer}
+.opt.right{background:#D4F6E0;border-color:var(--green);color:#11502b}.opt.wrong{background:#FFDCDC;border-color:var(--red);color:#7a1d1d}
+.ans{min-height:70px;border:4px dashed var(--acc);border-radius:18px;padding:8px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-bottom:12px}
+.pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ch{font:inherit;font-size:clamp(24px,3.6vw,32px);font-weight:700;border:0;border-radius:16px;padding:10px 16px;background:var(--acc);color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.2);cursor:pointer}
+.fb{border-radius:16px;padding:12px;font-size:clamp(19px,2.6vw,24px);line-height:1.7;margin-top:4px}
+.fb.ok{background:#D4F6E0;color:#11502b}.fb.no{background:#FFF0C2;color:#5e4500}
+.stars{font-size:46px;text-align:center;letter-spacing:6px}
+.hidden{display:none}
+.cf{position:fixed;font-size:26px;pointer-events:none;animation:fall 2.2s linear forwards;z-index:9}
+.st{position:fixed;font-size:24px;pointer-events:none;animation:rise 1s ease-out forwards;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+@keyframes rise{to{transform:translate(var(--dx),-80px) scale(1.5);opacity:0}}
+:focus-visible{outline:4px solid #FF9F43;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="m">🐰</div><h1>وَاجِبُ أَسْمَاءِ الْإِشَارَةِ</h1></header>
+
+<div class="steps" id="steps">
+  <button data-t="learn" class="on"><span class="ic">📘</span><span class="lb">١ • الشَّرْحُ</span><i></i></button>
+  <button data-t="read"><span class="ic">📖</span><span class="lb">٢ • الْقِطْعَةُ</span><i></i></button>
+  <button data-t="play"><span class="ic">🎯</span><span class="lb">٣ • التَّحَدِّي</span><i></i></button>
+</div>
+
+<main id="learn"></main>
+<main id="read" class="hidden"></main>
+<main id="play" class="hidden"></main>
+</div>
+<button class="backq hidden" id="back">↩ الْعَوْدَةُ إِلَى السُّؤَالِ</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="ar-SA";u.rate=.8;speechSynthesis.speak(u)}catch(e){}}
+function sh(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1])}
+function boom(){const s=["⭐","🎉","✨","🌟","🎈"];for(let k=0;k<14;k++){const c=document.createElement("span");c.className="cf";c.textContent=s[k%5];c.style.left=Math.random()*92+"vw";c.style.top="-30px";c.style.animationDelay=Math.random()*.5+"s";document.body.appendChild(c);setTimeout(()=>c.remove(),3000)}}
+function starsAt(el){const r=el.getBoundingClientRect();for(let k=0;k<4;k++){const c=document.createElement("span");c.className="st";c.textContent=k%2?"⭐":"✨";c.style.left=(r.left+Math.random()*r.width)+"px";c.style.top=(r.top)+"px";c.style.setProperty("--dx",(Math.random()*60-30)+"px");document.body.appendChild(c);setTimeout(()=>c.remove(),1100)}}
+let tm;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tm);tm=setTimeout(()=>e.classList.remove("show"),2600)}
+
+/* ================= البيانات ================= */
+const ROWS=[["مُفْرَدٌ مُذَكَّرٌ","هَذَا","هَذَا بَيْتٌ كَبِيرٌ.","🏠"],["مُفْرَدٌ مُؤَنَّثٌ","هَذِهِ","هَذِهِ حَقِيبَةٌ جَدِيدَةٌ.","🎒"],["مُثَنًّى مُذَكَّرٌ","هَذَانِ","هَذَانِ كُرْسِيَّانِ.","🪑🪑"],["مُثَنًّى مُؤَنَّثٌ","هَاتَانِ","هَاتَانِ تُفَّاحَتَانِ.","🍎🍎"],["جَمْعٌ","هَؤُلَاءِ","هَؤُلَاءِ تَلَامِيذُ.","👧🧒👦"],["الْمَكَانُ","هُنَا","هُنَا المَطْبَخُ.","🍳"]];
+const INFO={};ROWS.forEach(r=>INFO[r[1]]=r[0]+" — اسْمُ إِشَارَةٍ لِلْقَرِيبِ");
+const TIPS=["لِلْقَرِيبِ نَبْدَأُ غَالِبًا بِحَرْفِ <b>الْهَاءِ</b>: هَذَا، هَذِهِ، هَذَانِ، هَاتَانِ، هَؤُلَاءِ.","فِي الْمُثَنَّى نَقُولُ <b>هَذَانِ</b> وَ<b>هَاتَانِ</b> فِي الرَّفْعِ، وَ<b>هَذَيْنِ</b> وَ<b>هَاتَيْنِ</b> فِي النَّصْبِ وَالْجَرِّ.","<b>هَؤُلَاءِ</b> نَسْتَعْمِلُهَا لِلْجَمْعِ الْمُذَكَّرِ وَالْمُؤَنَّثِ.","فِي الْآيَةِ الْكَرِيمَةِ الَّتِي سَتَقْرَئِينَهَا كَلِمَةٌ فِيهَا <b>تَنْوِينٌ مَعَ شَدَّةٍ</b>، هَلْ سَتَجِدِينَهَا؟ 🔍"];
+/* [[شدة]]  {{تنوين مع شدة}}  ((اسم إشارة)) */
+const STORY=[
+"كَانَتْ إِيمَانُ [[تُحِبُّ]] [[أُمَّهَا]] وَأَبَاهَا كَثِيرًا. وَفِي يَوْمٍ رَجَعَتْ مِنَ المَدْرَسَةِ تَعِبَةً، فَقَالَتْ لَهَا [[أُمُّهَا]]: ((هَذِهِ)) غُرْفَتُكِ، وَ((هَذَا)) سَرِيرُكِ، [[رَتِّبِيهِمَا]] يَا حَبِيبَتِي. فَقَالَتْ إِيمَانُ بِغَضَبٍ: {{أُفٍّ}}! [[ثُمَّ]] دَخَلَتْ غُرْفَتَهَا، وَسَكَتَتِ [[الأُمُّ]] وَحَزِنَتْ.",
+"جَاءَ الأَبُ وَرَأَى الحُزْنَ فِي وَجْهِ [[الأُمِّ]]. فَنَادَى إِيمَانَ وَقَالَ: ((هَذِهِ)) [[أُمُّكِ]]، وَ((هَاتَانِ)) يَدَاهَا تَعْمَلَانِ لِأَجْلِكِ [[كُلَّ]] يَوْمٍ. [[ثُمَّ]] فَتَحَ المُصْحَفَ وَقَالَ: اسْمَعِي مَا قَالَهُ [[رَبُّنَا]] عَنِ الوَالِدَيْنِ:",
+{v:["وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوٓا۟ إِلَّآ إِيَّاهُ وَبِٱلْوَٰلِدَيْنِ إِحْسَٰنًا ۚ","إِمَّا يَبْلُغَنَّ عِندَكَ ٱلْكِبَرَ أَحَدُهُمَآ أَوْ كِلَاهُمَا","فَلَا تَقُل لَّهُمَآ أُفٍّ وَلَا تَنْهَرْهُمَا","وَقُل لَّهُمَا قَوْلًا كَرِيمًا"],ref:"سُورَةُ الإِسْرَاءِ — الآيَةُ ٢٣"},
+"[[أَحَسَّتْ]] إِيمَانُ بِالخَجَلِ، وَعَرَفَتْ [[أَنَّ]] كَلِمَةَ {{أُفٍّ}} تُحْزِنُ [[الأُمَّ]]. فَرَكَضَتْ إِلَى [[أُمِّهَا]] وَ[[ضَمَّتْهَا]] وَقَالَتْ: سَامِحِينِي يَا [[أُمِّي]]، أَنَا آسِفَةٌ، وَلَنْ أَقُولَهَا أَبَدًا. فَابْتَسَمَتِ [[الأُمُّ]] وَقَالَتْ: سَامَحَكِ [[اللَّهُ]] يَا حَبِيبَتِي.",
+"وَقَبْلَ [[النَّوْمِ]] نَظَرَتْ إِيمَانُ إِلَى أُسْرَتِهَا وَقَالَتْ: ((هَؤُلَاءِ)) [[أَحِبَّائِي]]، وَ((هَذَانِ)) [[أَحَبُّ]] [[النَّاسِ]] [[إِلَيَّ]]. [[ثُمَّ]] رَفَعَتْ يَدَيْهَا وَدَعَتْ [[رَبَّهَا]] بِالآيَةِ [[التَّالِيَةِ]]:",
+{v:["وَٱخْفِضْ لَهُمَا جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحْمَةِ","وَقُل رَّبِّ ٱرْحَمْهُمَا كَمَا رَبَّيَانِى صَغِيرًا"],ref:"سُورَةُ الإِسْرَاءِ — الآيَةُ ٢٤"},
+"فَفَرِحَ الأَبَوَانِ {{جِدًّا}}، وَقَالَا: [[اللَّهُمَّ]] بَارِكْ لَنَا فِي بَيْتِنَا. وَقَالَتْ إِيمَانُ: ((هُنَا)) فِي بَيْتِنَا [[سَأَتَكَلَّمُ]] دَائِمًا بِأَدَبٍ وَلُطْفٍ."
+];
+const MEAN=[["قَضَى","أَمَرَ وَأَوْجَبَ"],["إِحْسَانًا","مُعَامَلَةً حَسَنَةً بِلُطْفٍ"],["أُفٍّ","كَلِمَةُ ضَجَرٍ، لَا نَقُولُهَا لِلْوَالِدَيْنِ أَبَدًا"],["لَا تَنْهَرْهُمَا","لَا تَرْفَعْ صَوْتَكَ عَلَيْهِمَا"],["قَوْلًا كَرِيمًا","كَلَامًا لَطِيفًا طَيِّبًا"],["اخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ","تَوَاضَعْ لَهُمَا وَتَلَطَّفْ مَعَهُمَا"],["ارْحَمْهُمَا","ادْعُ لَهُمَا بِالرَّحْمَةِ"],["رَبَّيَانِي","اعْتَنَيَا بِي وَأَحْسَنَا تَرْبِيَتِي وَأَنَا صَغِيرٌ"]];
+const QD=[["🏠","___ بَيْتٌ كَبِيرٌ",["هَذَا","هَذِهِ","هَذَانِ"],0],["🎒","___ حَقِيبَةٌ جَدِيدَةٌ",["هَذَا","هَذِهِ","هَؤُلَاءِ"],1],["🪑🪑","___ كُرْسِيَّانِ",["هَذَانِ","هَاتَانِ","هَؤُلَاءِ"],0],["🍎🍎","___ تُفَّاحَتَانِ",["هَذَانِ","هَاتَانِ","هَذِهِ"],1],["👧🧒👦","___ تَلَامِيذُ",["هَذَا","هَاتَانِ","هَؤُلَاءِ"],2],["🌸","___ زَهْرَةٌ جَمِيلَةٌ",["هَذَا","هَذِهِ","هَذَانِ"],1],["🍳","مَكَانٌ قَرِيبٌ: ___ المَطْبَخُ",["هُنَا","هُنَاكَ","هَذَانِ"],0],["⚽","___ كُرَةٌ مُلَوَّنَةٌ",["هَذَا","هَذِهِ","هَذَانِ"],1]];
+const QB=[["هَذَا","بَيْتٌ","كَبِيرٌ"],["هَذِهِ","حَقِيبَةٌ","جَدِيدَةٌ"],["هَؤُلَاءِ","تَلَامِيذُ","مُجْتَهِدُونَ"],["هَاتَانِ","تُفَّاحَتَانِ","حَمْرَاوَانِ"]];
+const QG=[["👩‍👧","أَيُّ كَلِمَةٍ فِيهَا شَدَّةٌ؟",["وَالِدٌ","أُمِّي","أَبِي"],1],["📖","أَيُّ كَلِمَةٍ فِي الآيَةِ فِيهَا تَنْوِينٌ مَعَ شَدَّةٍ؟",["أُفٍّ","إِحْسَانًا","كَرِيمًا"],0],["💞","أَيُّ كَلِمَةٍ فِي القِصَّةِ فِيهَا تَنْوِينٌ مَعَ شَدَّةٍ؟",["جِدًّا","كَثِيرًا","بِأَدَبٍ"],0]];
+const QC=[["🧹","مَاذَا طَلَبَتِ الأُمُّ مِنْ إِيمَانَ؟",["تَرْتِيبَ غُرْفَتِهَا","شِرَاءَ الخُبْزِ","غَسْلَ السَّيَّارَةِ"],0],["😠","مَاذَا قَالَتْ إِيمَانُ بِغَضَبٍ؟",["أُفٍّ","شُكْرًا","حَسَنًا"],0],["😢","كَيْفَ شَعَرَتِ الأُمُّ؟",["حَزِنَتْ","ضَحِكَتْ","نَامَتْ"],0],["📖","مَاذَا فَتَحَ الأَبُ؟",["المُصْحَفَ","البَابَ","الحَقِيبَةَ"],0],["🤗","مَاذَا فَعَلَتْ إِيمَانُ بَعْدَ أَنْ عَرَفَتْ خَطَأَهَا؟",["اعْتَذَرَتْ لِأُمِّهَا","هَرَبَتْ","سَكَتَتْ"],0],["💚","مَاذَا قَالَتِ الأُمُّ لإِيمَانَ؟",["سَامَحَكِ اللَّهُ","لَنْ أُسَامِحَكِ","اذْهَبِي"],0],["🤍","مَاذَا أَمَرَنَا اللَّهُ فِي الآيَةِ بَعْدَ عِبَادَتِهِ؟",["الإِحْسَانُ لِلْوَالِدَيْنِ","اللَّعِبُ فَقَطْ","السَّفَرُ"],0],["🙊","أَيُّ كَلِمَةٍ لَا نَقُولُهَا لِلْوَالِدَيْنِ؟",["أُفٍّ","شُكْرًا","أُحِبُّكِ"],0],["🌟","كَيْفَ نَتَكَلَّمُ مَعَ الوَالِدَيْنِ حَسَبَ الآيَةِ؟",["قَوْلًا كَرِيمًا","قَوْلًا قَاسِيًا","لَا نَتَكَلَّمُ"],0],["🤲","بِمَاذَا دَعَتْ إِيمَانُ؟",["رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا","أُفٍّ لَكُمَا","لَا شَيْءَ"],0],["🏡","مَاذَا قَالَتْ إِيمَانُ فِي آخِرِ القِصَّةِ؟",["سَأَتَكَلَّمُ بِأَدَبٍ وَلُطْفٍ","سَأَغْضَبُ","سَأَنَامُ"],0]];
+
+/* ================= الحفظ والتنقل ================= */
+let SV={};try{SV=JSON.parse(localStorage.getItem("iman_near_game")||"{}")||{}}catch(e){SV={}}
+function sv(){try{localStorage.setItem("iman_near_game",JSON.stringify(SV))}catch(e){}}
+function paintDone(){["learn","read","play"].forEach(t=>{const i=document.querySelector('.steps button[data-t="'+t+'"] i');if(i)i.textContent=SV[t]?"✅":""})}
+function mark(t){SV[t]=1;sv();paintDone()}
+let inQ=false;
+function tab(t){
+  ["learn","read","play"].forEach(id=>$(id).classList.toggle("hidden",id!==t));
+  document.querySelectorAll(".steps button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));
+  document.body.dataset.t=t;
+  $("back").classList.toggle("hidden",!(t==="read"&&inQ));
+  window.scrollTo(0,0);
+}
+document.querySelectorAll(".steps button").forEach(b=>b.onclick=()=>tab(b.dataset.t));
+$("back").onclick=()=>tab("play");
+
+/* ================= الشرح ================= */
+function buildLearn(){
+  $("learn").innerHTML=
+  '<div class="zone"><span class="z1">📘</span><div><h2>مَكَانُ الشَّرْحِ</h2><p>نَتَعَلَّمُ أَسْمَاءَ الْإِشَارَةِ لِلْقَرِيبِ</p></div></div>'+
+  '<div class="card"><h2>🤔 اسْمُ الْإِشَارَةِ لِلْقَرِيبِ</h2><p>نَسْتَعْمِلُهُ عِنْدَمَا يَكُونُ الشَّيْءُ <b>قَرِيبًا</b> مِنَّا، كَأَنَّهُ بَيْنَ أَيْدِينَا 🤲</p><p style="font-size:30px;font-weight:700;text-align:center">«<span class="hl">هَذَا</span> بَيْتٌ»</p></div>'+
+  '<div class="card"><h2>🃏 اِكْتَشِفِي الْكَلِمَاتِ</h2><p>اُنْقُرِي عَلَى كُلِّ بِطَاقَةٍ لِتَرَيِ الْكَلِمَةَ وَمِثَالَهَا وَتَسْمَعِيهَا 🔊</p><span class="chip" id="lp">🧠 تَعَلَّمْتِ 0 مِنْ 6</span><div class="fc" id="fc"></div></div>'+
+  '<div class="card"><h2>💡 مَعْلُومَاتٌ مُفِيدَةٌ</h2>'+TIPS.map(t=>'<div class="tip">'+t+'</div>').join("")+'</div>'+
+  '<button class="go" id="goRead2">التَّالِي: اِقْرَئِي الْقِطْعَةَ ◀</button>';
+  $("goRead2").onclick=()=>tab("read");
+  let n=0;
+  ROWS.forEach(r=>{
+    const b=document.createElement("button");b.className="fb2";b.innerHTML='<span class="e">'+r[3]+'</span>'+r[0]+'<br>👆 اُنْقُرِي';
+    b.onclick=()=>{
+      b.innerHTML='<span class="w">'+r[1]+'</span><span class="s">'+r[2]+'</span><span class="e">'+r[3]+'</span>';
+      say(r[1]+". "+r[2]);starsAt(b);
+      if(!b.classList.contains("seen")){b.classList.add("seen");n++;$("lp").textContent="🧠 تَعَلَّمْتِ "+n+" مِنْ 6";if(n==6){boom();$("lp").textContent="🏆 أَحْسَنْتِ! تَعَلَّمْتِ الْكَلِمَاتِ كُلَّهَا";mark("learn")}}
+    };
+    $("fc").appendChild(b);
+  });
+}
+
+/* ================= القطعة ================= */
+const SIGN=/^[ۖ-ۭ]+$/;
+function words(t){return t.split(/\s+/).filter(Boolean)}
+function wordHtml(w){
+  const h=w.replace(/\u0001(.)(.+?)\u0002/g,(m,c,x)=>'<span class="'+c+'" data-i="'+(c=="d"?(INFO[x]||"اسْمُ إِشَارَةٍ لِلْقَرِيبِ"):c=="s"?"فِي هَذِهِ الْكَلِمَةِ شَدَّةٌ":"فِي هَذِهِ الْكَلِمَةِ تَنْوِينٌ مَعَ شَدَّةٍ")+'">'+x+'</span>');
+  return '<span class="wd">'+h+'</span>';
+}
+function para(t){
+  t=t.replace(/\(\((.+?)\)\)/g,"\u0001d$1\u0002").replace(/\[\[(.+?)\]\]/g,"\u0001s$1\u0002").replace(/\{\{(.+?)\}\}/g,"\u0001t$1\u0002");
+  return '<p class="pg">'+words(t).map(wordHtml).join(" ")+'</p>';
+}
+function verseLine(l){
+  const out=[];
+  words(l).forEach(w=>{if(SIGN.test(w)&&out.length)out[out.length-1]+=" "+w;else out.push(w)});
+  return '<span class="ln">'+out.map(w=>'<span class="wd" data-v="1">'+w+'</span>').join(" ")+'</span>';
+}
+function buildRead(){
+  let vc=0;
+  const items=STORY.map(x=>typeof x==="string"?para(x):
+    '<div class="ayah"'+(vc++?'':' id="ayah"')+'><div class="ref">🕌 الْآيَةُ الْكَرِيمَةُ — '+x.ref+'</div><div class="ar">﴿<br>'+x.v.map(verseLine).join("")+'﴾</div></div>').join("");
+  $("read").innerHTML=
+  '<div class="zone"><span class="z1">📖</span><div><h2>مَكَانُ الْقِطْعَةِ</h2><p>اِقْرَئِي كُلَّ كَلِمَةٍ ثُمَّ اُنْقُرِي عَلَيْهَا لِتَجْمَعِي النُّجُومَ ⭐</p></div></div>'+
+  '<div class="card"><div class="stat"><span class="chip" id="rp">⭐ 0</span><span class="chip" id="rd2">🎯 أَسْمَاءُ الْإِشَارَةِ: 0</span></div><div class="bar"><i id="rb"></i></div>'+
+  '<div class="medals" id="md"><span>🥉</span><span>🥈</span><span>🥇</span><span>🏆</span></div>'+
+  '<button class="say" id="all">🔊 اِسْمَعِي</button><button class="say" id="rst" style="background:#8a8aa8">🔄 مِنْ جَدِيدٍ</button><button class="say o" id="clr">🎨 الْأَلْوَانُ</button>'+
+  '<div class="tog hidden" id="tg"><button class="tg" id="t-sh">الشَّدَّةُ</button><button class="tg" id="t-tn">تَنْوِينٌ مَعَ شَدَّةٍ</button><button class="tg" id="t-ds">أَسْمَاءُ الْإِشَارَةِ</button></div></div>'+
+  '<div class="page"><span class="ribbon">📖 الْقِطْعَةُ</span><div class="ttl">إِيمَانُ وَكَلِمَةُ «أُفٍّ»</div><div class="story" id="story">'+items+'</div></div>'+
+  '<button class="go" id="goPlay" style="background:linear-gradient(135deg,#7C5CFF,#FF6F91)">🎯 اِبْدَئِي التَّحَدِّيَ</button>'+
+  '<div class="card"><h2>📚 مَعَانِي كَلِمَاتِ الْآيَةِ</h2>'+MEAN.map(m=>'<div class="tip"><b>'+m[0]+'</b>: '+m[1]+'</div>').join("")+'</div>';
+  const all=()=>document.querySelectorAll("#story .wd");
+  const N=all().length,D=document.querySelectorAll("#story .d").length;let n=0,dn2=0,ayahNote=false,doneD=false;
+  const upd=()=>{
+    $("rp").textContent="⭐ "+n+" مِنْ "+N;$("rb").style.width=(n/N*100)+"%";$("rd2").textContent="🎯 أَسْمَاءُ الْإِشَارَةِ: "+dn2+" مِنْ "+D;
+    const pc=n/N*100;[...document.querySelectorAll("#md span")].forEach((m,i)=>m.classList.toggle("on",pc>=[25,50,75,100][i]-0.01));
+  };
+  upd();
+  $("story").onclick=e=>{
+    const w=e.target.closest(".wd");if(!w)return;
+    const inner=w.querySelector("[data-i]");
+    if(w.dataset.v){
+      if(!ayahNote){ayahNote=true;toast("اِقْرَئِي الْآيَةَ بِبُطْءٍ، ثُمَّ رَاجِعِي قِرَاءَتَكِ مَعَ مُعَلِّمَتِكِ أَوْ مَعَ قَارِئٍ مُتْقِنٍ 🕌")}
+    }else{
+      say(w.textContent.replace(/[.,:،؟!]/g,""));
+      if(inner&&inner.className!=="s")toast(inner.textContent+" ← "+inner.dataset.i);
+    }
+    if(!w.classList.contains("rd")){
+      w.classList.add("rd");n++;starsAt(w);
+      if(inner&&inner.className==="d"){dn2++;if(dn2==D&&!doneD){doneD=true;boom();toast("🎯 وَجَدْتِ كُلَّ أَسْمَاءِ الْإِشَارَةِ!")}}
+      upd();
+      if(n==N){boom();$("rp").textContent="🏆 أَحْسَنْتِ! قَرَأْتِ الْقِطْعَةَ كُلَّهَا";toast("مَا شَاءَ اللَّهُ! قَرَأْتِ كُلَّ الْكَلِمَاتِ 🎉 هَيَّا إِلَى التَّحَدِّي");mark("read")}
+    }
+  };
+  [["t-sh","sh"],["t-tn","tn"],["t-ds","ds"]].forEach(([b,c])=>$(b).onclick=()=>{$(b).classList.toggle("on");$("story").classList.toggle(c)});
+  $("clr").onclick=()=>{const hid=$("tg").classList.toggle("hidden");["sh","tn","ds"].forEach(c=>{$("story").classList.toggle(c,!hid);$("t-"+c).classList.toggle("on",!hid)})};
+  $("all").onclick=()=>say([...document.querySelectorAll("#story p.pg")].map(p=>p.textContent).join(" "));
+  $("rst").onclick=()=>{all().forEach(w=>w.classList.remove("rd"));n=0;dn2=0;doneD=false;upd()};
+  $("goPlay").onclick=()=>tab("play");
+}
+
+/* ================= التحدي ================= */
+let Ls=[],qi=0,pts=0,dn=false,NQ=12,res=[],streak=0;
+function buildPlay(){
+  $("play").innerHTML=
+  '<div class="zone"><span class="z1">🎯</span><div><h2>مَكَانُ الْأَسْئِلَةِ</h2><p>تَحَدِّي أَسْمَاءِ الْإِشَارَةِ</p></div></div>'+
+  '<div class="card" id="pS"><div class="em">🐰⬅️🏁</div><h2 style="text-align:center">هَلْ تَصِلِينَ إِلَى الْعَلَمِ؟</h2><p style="text-align:center">كُلَّمَا أَجَبْتِ تَقَدَّمَ الْأَرْنَبُ. اِجْمَعِي النُّجُومَ لِتَنَالِي الْمِيدَالِيَّةَ!</p><div class="medals"><span class="on">🥉</span><span class="on">🥈</span><span class="on">🥇</span></div><p style="text-align:center" id="bst"></p><button class="btn" id="pG">اِبْدَئِي التَّحَدِّيَ 🚀</button></div>'+
+  '<div class="card hidden" id="pQ"><div class="top"><span id="pn"></span><span><span class="sk" id="sk"></span> <span id="ps"></span></span></div><div class="track" id="tr"></div><div class="em" id="pe"></div><div class="q" id="pq"></div><div id="lkw"></div><div id="po"></div><div class="fb hidden" id="pf" role="status" aria-live="polite"></div><button class="btn hidden" id="pN">التَّالِي ◀</button></div>'+
+  '<div class="card hidden" id="pE"><div class="em" id="pe2"></div><h2 style="text-align:center" id="pt"></h2><div class="stars" id="pst"></div><p style="text-align:center" id="pm"></p><p style="text-align:center" id="pb2"></p><button class="btn" id="pA">🔁 أَعِيدِي التَّحَدِّيَ</button><button class="btn" id="pR" style="background:#D9730D">📖 أَرْجِعُ إِلَى الْقِطْعَةِ</button></div>';
+  $("pG").onclick=go;$("pA").onclick=go;$("pR").onclick=()=>{inQ=false;tab("read")};
+  $("pN").onclick=()=>{qi++;qi<NQ?ld():fin()};
+  bestLine();
+}
+function bestLine(){$("bst").textContent=SV.best?"🏅 أَفْضَلُ نَتِيجَةٍ لَكِ: "+SV.best+" مِنْ 12":""}
+function pv(id){["pS","pQ","pE"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+const mapQ=q=>({e:q[0],q:q[1],o:q[2],a:q[3]});
+function go(){
+  const pk=(a,n)=>sh(a).slice(0,n);
+  Ls=sh([...pk(QD.map(mapQ),4),...pk(QB.map(b=>({b})),2),...pk(QG.map(mapQ),2).map(q=>Object.assign({look:1},q)),...pk(QC.map(mapQ),4).map(q=>Object.assign({look:1},q))]);
+  NQ=Ls.length;qi=0;pts=0;res=[];streak=0;inQ=true;pv("pQ");ld();
+}
+function track(){
+  let h="";
+  for(let k=0;k<NQ;k++){
+    let c,cl="";
+    if(k<qi||(k===qi&&dn)){c=res[k]?"⭐":"▫️"}
+    else if(k===qi){c="🐰";cl=' class="me"'}
+    else c=(k===NQ-1)?"🏁":"○";
+    h+='<span'+cl+'>'+c+'</span>';
+  }
+  $("tr").innerHTML=h;
+}
+function ld(){
+  dn=false;const q=Ls[qi];
+  $("pn").textContent="السُّؤَالُ "+(qi+1)+" مِنْ "+NQ;$("ps").textContent="⭐ "+pts;$("sk").textContent=streak>=2?"🔥 ×"+streak:"";
+  track();
+  $("pf").classList.add("hidden");$("pN").classList.add("hidden");
+  $("lkw").innerHTML=q.look?'<button class="say o" id="lk">📖 أَنْظُرُ إِلَى الْقِطْعَةِ</button>':"";
+  if(q.look)$("lk").onclick=()=>{tab("read");toast("لِلْعَوْدَةِ اُنْقُرِي زِرَّ ↩ فِي الْأَسْفَلِ")};
+  const box=$("po");box.innerHTML="";
+  if(q.b){
+    $("pe").textContent="🧩";$("pq").textContent="رَتِّبِي الْكَلِمَاتِ لِتُكَوِّنِي جُمْلَةً صَحِيحَةً";
+    let ans=[],pool=sh(q.b.map((w,k)=>({w,k})));
+    box.innerHTML='<div class="ans" id="ans"></div><div class="pool" id="pool"></div>';
+    const chip=(c,f)=>{const b=document.createElement("button");b.className="ch";b.textContent=c.w;b.onclick=f;return b};
+    const draw=()=>{
+      $("ans").innerHTML="";$("pool").innerHTML="";
+      ans.forEach(c=>$("ans").appendChild(chip(c,()=>{if(dn)return;ans=ans.filter(x=>x!==c);pool.push(c);draw()})));
+      pool.forEach(c=>$("pool").appendChild(chip(c,()=>{if(dn)return;pool=pool.filter(x=>x!==c);ans.push(c);draw();if(!pool.length)fb(ans.every((c,i)=>c.k===i),q.b.join(" "),"الْجُمْلَةُ الصَّحِيحَةُ: "+q.b.join(" "),$("ans"))})));
+    };
+    draw();
+  }else{
+    $("pe").textContent=q.e;$("pq").textContent=q.q;
+    sh(q.o.map((t,k)=>({t,k}))).forEach(o=>{
+      const x=document.createElement("button");x.className="opt";x.textContent=o.t;x.dataset.k=o.k;
+      x.onclick=()=>{
+        if(dn)return;const ok=o.k===q.a;
+        document.querySelectorAll(".opt").forEach(z=>{z.disabled=true;if(+z.dataset.k===q.a)z.classList.add("right")});
+        if(!ok)x.classList.add("wrong");
+        fb(ok,q.o[q.a],"الْإِجَابَةُ الصَّحِيحَةُ: "+q.o[q.a],x);
+      };
+      box.appendChild(x);
+    });
+  }
+}
+const PRAISE=["🎉 أَحْسَنْتِ! ","🌟 مُمْتَازَةٌ! ","⭐ رَائِعٌ! ","👏 بَارَكَ اللَّهُ فِيكِ! "];
+function fb(ok,word,txt,el){
+  dn=true;res[qi]=ok;
+  if(ok){pts++;streak++;if(el)starsAt(el);if(streak>=3&&streak%3===0)boom()}else streak=0;
+  $("ps").textContent="⭐ "+pts;$("sk").textContent=streak>=2?"🔥 ×"+streak:"";
+  track();
+  const f=$("pf");f.className="fb "+(ok?"ok":"no");f.textContent=(ok?PRAISE[qi%4]:"💡 لَا بَأْسَ، حَاوِلِي مَرَّةً أُخْرَى. ")+txt;
+  $("pN").textContent=qi==NQ-1?"شَاهِدِي النَّتِيجَةَ 🏆":"التَّالِي ◀";$("pN").classList.remove("hidden");
+  say(word);
+}
+function fin(){
+  inQ=false;pv("pE");const r=pts/NQ;
+  $("pe2").textContent=r>=.85?"🥇":r>=.6?"🥈":"🥉";
+  $("pt").textContent=r>=.85?"مِيدَالِيَّةٌ ذَهَبِيَّةٌ! أَنْتِ بَطَلَةُ أَسْمَاءِ الْإِشَارَةِ":r>=.6?"مِيدَالِيَّةٌ فِضِّيَّةٌ! أَحْسَنْتِ":"مِيدَالِيَّةٌ بُرُونْزِيَّةٌ! مُحَاوَلَةٌ جَمِيلَةٌ";
+  const n=r>=.85?3:r>=.6?2:1;$("pst").textContent="⭐".repeat(n)+"☆".repeat(3-n);
+  $("pm").textContent="أَجَبْتِ إِجَابَةً صَحِيحَةً عَنْ "+pts+" مِنْ "+NQ+" سُؤَالًا. "+(r>=.85?"أَنْتِ رَائِعَةٌ!":"اِقْرَئِي الْقِطْعَةَ مَرَّةً أُخْرَى وَحَاوِلِي الْوُصُولَ إِلَى الذَّهَبِيَّةِ 🥇");
+  if(!SV.best||pts>SV.best){SV.best=pts;sv()}
+  $("pb2").textContent="🏅 أَفْضَلُ نَتِيجَةٍ لَكِ: "+SV.best+" مِنْ "+NQ;
+  bestLine();
+  if(r>=.6){boom();mark("play")}
+}
+buildLearn();buildRead();buildPlay();paintDone();tab("learn");
+</script>
+</body>
+</html>
